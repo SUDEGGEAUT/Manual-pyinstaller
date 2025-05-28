@@ -27,6 +27,8 @@ pyinstaller --noconfirm --onedir ^
 --add-data "C:\python\upload_sifama\chromedriver-win64;chromedriver-win64" ^
 download_sei.py
 
+(Como são dois, e eles utilizam os mesmos dados como planilha, logs e chromedriver. Um deve ser onedir e outro onefile).
+
 pause
 
 #######################################################################################################
