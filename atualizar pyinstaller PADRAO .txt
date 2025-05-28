@@ -9,6 +9,28 @@ pause
 
 #######################################################################################################
 
+ - Para instalação de dois programas em apenas uma pasta:
+
+REM Caminho comum para os dois .exe
+
+REM Compilar upload_sifama.py em modo onefile
+pyinstaller --noconfirm --onefile ^
+--add-data "C:\python\upload_sifama\download;download" ^
+--add-data "C:\python\upload_sifama\Controle de documentos.xlsx;." ^
+--add-data "C:\python\upload_sifama\chromedriver-win64;chromedriver-win64" ^
+upload_sifama.py
+
+REM Compilar download_sei.py (também pode ser onefile ou onedir)
+pyinstaller --noconfirm --onedir ^
+--add-data "C:\python\upload_sifama\download;download" ^
+--add-data "C:\python\upload_sifama\Controle de documentos.xlsx;." ^
+--add-data "C:\python\upload_sifama\chromedriver-win64;chromedriver-win64" ^
+download_sei.py
+
+pause
+
+#######################################################################################################
+
 \\ --noconsole -- para nao exibir o prompt de comando || USE APENAS QUANDO TIVER O TKINTER
 \\ --ico=      -- para definir o caminho do icone do programa || O icone deve estar em .ico
 \\ --noconfirm -- para nao pedir permissao para subscrever
