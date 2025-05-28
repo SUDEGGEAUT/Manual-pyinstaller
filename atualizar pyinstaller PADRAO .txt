@@ -1,0 +1,25 @@
+@echo off
+pyinstaller --noconsole --ico="CAMINHO PARA O ICONE" --noconfirm --onedir ^
+--add-data "C:\python\NOME_PROGRAMA\ ARQUIVO PARA INSTALAR JUNTO\;TUDO QUE ESTIVER DENTRO DA PASTA" ^ 
+--add-data "C:\python\NOME_PROGRAMA\ EXEMPLO.xlsx;. ^
+--add-data "C:\python\NOME_PROGRAMA\chromedriver-win64\*;chromedriver-win64" ^
+--add-data "C:\python\NOME_PROGRAMA\login_sifama.py;." ^
+NOME_DO_PROGRAMA.py
+pause
+
+#######################################################################################################
+
+\\ --noconsole -- para nao exibir o prompt de comando || USE APENAS QUANDO TIVER O TKINTER
+\\ --ico=      -- para definir o caminho do icone do programa || O icone deve estar em .ico
+\\ --noconfirm -- para nao pedir permissao para subscrever
+\\ --onedir    -- para extrair o programa com uma pasta e o arquivo exe
+\\ --onefile   -- para comprimir o programa em apenas um exe, sem pasta
+
+\\ --add-data  -- para adicionar a pasta/arquivo necessario para a execucao do programa || EXEMPLO: chromedriver, planilha, json, etc
+
+\\ ""  \;  "" para selecionar todas as pastas e subpastas com os arquivos
+\\ ""  \*; "" para selecionar todos os arquivos
+\\ ""  ;.  "" para selecionar um arquivo
+
+-- Para quebrar a linha do texto no prompt utilize "" ^ ""
+-- Evite deixar espacos apos o ^
